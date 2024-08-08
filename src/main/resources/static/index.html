@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application - Username</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<div id="username-page" class="page">
+    <div class="container">
+        <h1>Enter Your Username</h1>
+        <form id="usernameForm" name="usernameForm">
+            <input type="text" id="name" placeholder="Username" autocomplete="off" required>
+            <button type="submit" class="btn-primary">Start Chatting</button>
+        </form>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>
