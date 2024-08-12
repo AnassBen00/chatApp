@@ -71,6 +71,10 @@ function onMessageReceived(payload) {
     var message = JSON.parse(payload.body);
     var messageElement = document.createElement('li');
 
+    // Create text container
+    var textContainer = document.createElement('div');
+    textContainer.classList.add('text-container');
+
     if(message.type === 'CONNECT') {
         messageElement.classList.add('event-message');
         message.content = message.sender + ' joined!';
@@ -90,14 +94,15 @@ function onMessageReceived(payload) {
         var usernameElement = document.createElement('span');
         var usernameText = document.createTextNode(message.sender);
         usernameElement.appendChild(usernameText);
-        messageElement.appendChild(usernameElement);
+        textContainer.appendChild(usernameElement);
     }
 
     var textElement = document.createElement('p');
     var messageText = document.createTextNode(message.content);
     textElement.appendChild(messageText);
+    textContainer.append(messageText);
 
-    messageElement.appendChild(textElement);
+    messageElement.appendChild(textContainer);
     messageArea.appendChild(messageElement);
     messageArea.scrollTop = messageArea.scrollHeight;
 }
